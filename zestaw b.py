@@ -34,14 +34,10 @@ print("Wynik to:", wynik)
 #ZAD 5
 try:
     n = int(input("Podaj liczbę całkowitą n: "))
-    m = int(input("Podaj liczbę całkowitą m: "))
-
-    if n <= 0 or m <= 0:
-        raise ValueError("Podane liczby muszą być dodatnie!")
-
-    suma = sum(range(1, n+1)) + sum(range(1, m+1))
+    suma = int(sum(range(1, n+1)))
     with open("zadanie5.txt", "w") as plik:
-        plik.write(f"Suma liczb od 1 do {n} i od 1 do {m} wynosi: {suma}")
-    print(f"Suma liczb od 1 do {n} i od 1 do {m} wynosi: {suma}")
-except ValueError as e:
-    print(f"Wystąpił błąd: {e}")
+        plik.write(f"Suma liczb od 1 do {n}  wynosi: {suma}")
+        plik.close()
+    print(f"Suma liczb od 1 do {n} wynosi: {suma}")
+except ValueError :
+    print(f"Wystąpił błąd:")
