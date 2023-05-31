@@ -1,0 +1,27 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def f(x):
+    return np.tan(x) + np.cos(x)/2
+
+x = np.arange(5, 10, 0.15)
+
+y = f(x)
+
+plt.plot(x, y, label='f(x) = tan(x) + cos(x)/2')
+
+plt.xlabel('x')
+plt.ylabel('f(x)')
+
+plt.title('Wykres funkcji f(x) = tan(x) + cos(x)/2')
+
+plt.xlim(5, 10)
+
+plt.legend()
+
+plt.scatter(x, y, color='red', label='Wartości x i f(x)')
+for i in range(len(x)):
+    plt.annotate(f'({x[i]:.2f}, {y[i]:.2f})', (x[i], y[i]), textcoords="offset points", xytext=(0,10), ha='center')
+
+plt.savefig('Dawid_Kaczyński_zad1.png')
+plt.show()
